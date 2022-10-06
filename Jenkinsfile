@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build code using Maven') { 
             steps {
-                echo "Maven Build Complete"
+                sh "mvn clean install"
             }
         }
         stage('Run Unit Test') { 
