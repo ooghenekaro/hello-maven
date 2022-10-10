@@ -1,35 +1,21 @@
 pipeline {
     agent any 
-    stages {
-        stage('Git checkout') { 
+    stages {  
+        stage('Vadidate mavn project') { 
             steps {
-                echo "checkout Complete"
+                sh "mvn validate"
             }
         }
-        stage('Sonarqube test') { 
+        stage('Run maven test') { 
             steps {
-                echo "Test Complete"
+                sh "mvn test"
             }
         }
-        stage('Build code using Maven') { 
+        stage('Run clean install') { 
             steps {
-                sh "mvn clean install"
+                echo "mvn clean insall"
             }
         }
-        stage('Run Unit Test') { 
-            steps {
-                echo "Unit Test Complete"
-            }
-        }
-        stage('Push package to Registry') { 
-            steps {
-                echo "Code Pushed to Registry"
-            }
-        }
-        stage('Perform Dynamic code analysis') { 
-            steps {
-                echo "Perform Dynamic code analysis"
-            }
-        }
+        
     }
 }
