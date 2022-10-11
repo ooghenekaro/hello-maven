@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Run clean install') { 
             steps {
-                sh "mvn clean insall"
+                sh "mvn clean install"
             }
         }
         stage('Push package to Registry') { 
