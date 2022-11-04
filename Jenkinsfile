@@ -54,7 +54,6 @@ pipeline{
                               playbook: 'ansible/tomcat.yaml',
                               inventory: 'ansible/hosts',
                               credentialsId: 'ooghenekaro-ssh',
-                              disableHostKeyChecking: true,
                               colorized: true
                         )
                }
