@@ -1,5 +1,5 @@
 [devServer]
-root@134.209.68.18
+root@142.93.121.175
 
 [prodServer]
 root@192.241.149.155
