@@ -13,7 +13,7 @@ Environment=CATALINA_PID=/opt/tomcat10/temp/tomcat.pid
 Environment=CATALINA_HOME=/opt/tomcat10
 Environment=CATALINA_BASE=/opt/tomcat10
 Environment=CATALINA_OPTS=
-Environment="JAVA_OPTS=-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true \
+Environment="JAVA_OPTS=-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true"
 ExecStart=/opt/tomcat10/bin/startup.sh
 ExecStop=/bin/kill -15 $MAINPID
 [Install]
