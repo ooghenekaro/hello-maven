@@ -8,9 +8,9 @@
   tasks:
     - name: Copy war file
       copy:
-         src: "{{artifact}}"
-         dest: /opt/tomcat10/webapps/
-         mode: 0755
+        src: "{{artifact}}"
+        dest: /opt/tomcat10/webapps/
+        mode: 0755
 
     - name: Start and Enable Tomcat 10 on sever
       systemd:
