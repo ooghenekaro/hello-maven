@@ -72,7 +72,7 @@
         dest: /etc/systemd/system/
         mode: 0755
 
-    - name: Start and Enable Tomcat 10 on sever
+    - name: Start and Enable Tomcat 10 on server
       systemd:
         name: tomcat
         enabled: yes
