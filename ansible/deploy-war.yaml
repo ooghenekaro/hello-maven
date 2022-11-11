@@ -2,6 +2,7 @@
 - name: Deploy code on servers
   hosts: all
   become: yes
+  gather_facts: True
   remote_user: root
   become_user: root
 
