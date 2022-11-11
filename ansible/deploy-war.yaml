@@ -8,7 +8,7 @@
   tasks:
     - name: Copy war file
       copy:
-        src: "${WORKSPACE}/target/hello-maven-1.0-SNAPSHOT.war"
+        src: "{{artifact}}"
         dest: /opt/tomcat10/webapps/
         mode: 0755
 
