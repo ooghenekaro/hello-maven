@@ -1,5 +1,5 @@
 [devServer]
-142.93.121.175 ansible_ssh_pass='password' ansible_user='root'
+142.93.121.175
 
 [prodServer]
-143.244.172.110 ansible_ssh_pass='password' ansible_user='root'
+143.244.172.110
