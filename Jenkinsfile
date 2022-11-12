@@ -6,23 +6,23 @@ pipeline{
    stages{
         stage('Validate project') {
             steps{
-                sh 'mvn validate'
+                echo 'mvn validate'
             }
         }
         stage('Maven build') {
             steps{
-                sh 'mvn clean install'
+                echo 'mvn clean install'
             }
         }
         stage('Unit testing') {
             steps{
-                sh 'mvn test'
+                echo 'mvn test'
             }
         }
         stage('Run Sonarqube') {
             steps{
                 withSonarQubeEnv(credentialsId: 'Sonar-key', installationName: 'SonarServer') {
-                         sh "mvn clean package sonar:sonar"
+                         echo "mvn clean package sonar:sonar"
                 }
             }
         }
@@ -39,7 +39,7 @@ pipeline{
         stage('Push to Artifactory (Jfrog)') {
             steps{
                 configFileProvider([configFile(fileId: '9cd879f3-0d67-4b90-b1d3-82fb6a73442b', variable: 'MAVEN_SETTINGS_XML')]) {
-                      sh 'mvn -U --batch-mode -s $MAVEN_SETTINGS_XML clean deploy'
+                      echo 'mvn -U --batch-mode -s $MAVEN_SETTINGS_XML clean deploy'
                 }
             }
         }
