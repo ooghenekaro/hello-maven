@@ -1,5 +1,5 @@
 [devServer]
-rekeyole@142.93.121.175
+142.93.121.175 ansible_ssh_pass='password' ansible_user='root'
 
 [prodServer]
-rekeyole@143.244.172.110
+143.244.172.110 ansible_ssh_pass='password' ansible_user='root'
