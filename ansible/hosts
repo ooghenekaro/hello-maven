@@ -1,5 +1,5 @@
 [devServer]
-142.93.121.175 ansible_user=root ansible_private_key=~/.ssh/id_rsa
+142.93.121.175
 
 [prodServer]
-143.244.172.110 ansible_user=root ansible_private_key=~/.ssh/id_rsa
+143.244.172.110
