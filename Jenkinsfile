@@ -52,7 +52,6 @@ pipeline{
                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         ansiblePlaybook(
                             credentialsId: 'ooghenekaro-ssh',
-                             disableHostKeyChecking: 'true',
                              installation: 'ansible',
                              inventory: 'ansible/hosts',
                              playbook: 'ansible/tomcat.yaml'
