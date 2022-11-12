@@ -52,7 +52,6 @@ pipeline{
                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         ansiblePlaybook(
                             credentialsId: 'ooghenekaro-ssh',
-                             private_Key: '~/.ssh/id_rsa',
                              disableHostKeyChecking: 'true',
                              installation: 'ansible',
                              inventory: 'ansible/hosts',
