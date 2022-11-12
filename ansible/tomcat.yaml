@@ -1,7 +1,7 @@
 ---
 - name: install and configure tomcat
-  hosts: all
-  #hosts: "{{myHosts}}"
+  #hosts: all
+  hosts: "{{myHosts}}"
   remote_user: root
   become: yes
 
