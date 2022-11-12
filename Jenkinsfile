@@ -20,12 +20,9 @@ pipeline{
             }
         }
         stage('Run Sonarqube') {
-            environment{
-                        scannerHome = tool 'ibt-sonarqube';
-            }
             steps{
-                withSonarQubeEnv(credentialsId: 'SQ-student', installationName: 'IBT sonarqube') {
-                         sh "${scannerHome}/bin/sonar-scanner"
+                withSonarQubeEnv(credentialsId: 'Sonar-key', installationName: 'SonarServer') {
+                         sh "mvn clean package sonar:sonar"
                 }
             }
         }
@@ -41,7 +38,7 @@ pipeline{
         }
         stage('Push to Artifactory (Jfrog)') {
             steps{
-                configFileProvider([configFile(fileId: '5d0920bc-97c5-4877-8aa4-2f61975fa9fc', variable: 'MAVEN_SETTINGS_XML')]) {
+                configFileProvider([configFile(fileId: '9cd879f3-0d67-4b90-b1d3-82fb6a73442b', variable: 'MAVEN_SETTINGS_XML')]) {
                       sh 'mvn -U --batch-mode -s $MAVEN_SETTINGS_XML clean deploy'
                 }
             }
