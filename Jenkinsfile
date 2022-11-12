@@ -53,7 +53,7 @@ pipeline{
                         ansiblePlaybook(
                             credentialsId: 'ooghenekaro-ssh',
                              privateKey: '~/.ssh/id_rsa'
-                             disableHostKeyChecking: true,
+                             disableHostKeyChecking: 'true',
                              installation: 'ansible',
                              inventory: 'ansible/hosts',
                              playbook: 'ansible/tomcat.yaml'
