@@ -51,10 +51,11 @@ pipeline{
            steps{
                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                         ansiblePlaybook(
-                              playbook: 'ansible/tomcat.yaml',
-                              inventory: 'ansible/hosts',
-                              credentialsId: 'ooghenekaro-ssh',
-                              colorized: true
+                            credentialsId: 'ooghenekaro-ssh',
+                             disableHostKeyChecking: true,
+                             installation: 'ansible',
+                             inventory: 'ansible/hosts',
+                             playbook: 'ansible/tomcat.yaml'
                         )
                }
            }
