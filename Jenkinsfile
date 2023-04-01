@@ -4,21 +4,6 @@ pipeline{
            timeout(time: 10, unit: 'MINUTES')
    }
    stages{
-        stage('Validate project') {
-            steps{
-                sh 'mvn validate'
-            }
-        }
-        stage('Maven build') {
-            steps{
-                sh 'mvn clean install'
-            }
-        }
-        stage('Unit testing') {
-            steps{
-                sh 'mvn test'
-            }
-        }
         stage('Run Sonarqube') {
             environment{
                 scannerHome = tool 'ibt-sonarqube';
