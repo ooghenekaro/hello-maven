@@ -1,5 +1,8 @@
 pipeline{
    agent any
+   
+   def mvnHome = tool 'maven_3.8'
+   
    options {
            timeout(time: 10, unit: 'MINUTES')
    }
